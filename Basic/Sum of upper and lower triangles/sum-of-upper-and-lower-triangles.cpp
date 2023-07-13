@@ -11,24 +11,24 @@ class Solution
     //Function to return sum of upper and lower triangles of a matrix.
     vector<int> sumTriangles(const vector<vector<int> >& matrix, int n)
     {
-         vector<int>ans;
-        int lowSum = 0;
-        vector<int>result;
-           for(int i=0; i<n; i++){
-               for(int j =0; j<=i; j++)
-                   lowSum += matrix[i][j];      
-           } 
-           
-           int upSum = 0;
-           for(int i = 0; i<n; i++){
-               for(int j = n-1; j>=i; j--){
-                    upSum += matrix[i][j];
-               }
-           }
-            ans.push_back(upSum);
-           ans.push_back(lowSum);
-          
-           return ans;
+        int lowsum = 0;
+        int uppsum = 0;
+        vector<int>ans;
+        for(int i=0; i<n; i++){
+            for(int j=0; j<=i; j++){
+                lowsum += matrix[i][j];
+            }
+        }
+        for(int i=0; i<n; i++){
+            for(int j=n-1; j>=i; j--){
+                uppsum += matrix[i][j];
+            }
+        }
+        
+        ans.push_back(uppsum);
+        ans.push_back(lowsum);
+        
+        return ans;
     }
 };
 
