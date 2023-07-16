@@ -11,27 +11,57 @@ class Solution
     //Function to return sum of upper and lower triangles of a matrix.
     vector<int> sumTriangles(const vector<vector<int> >& matrix, int n)
     {
-        int lowsum = 0;
-        int uppsum = 0;
         vector<int>ans;
-        for(int i=0; i<n; i++){
+        int lowsum = 0; 
+         int upSum = 0;
+        for(int i=0; i<n;i++){
             for(int j=0; j<=i; j++){
-                lowsum += matrix[i][j];
+                 lowsum += matrix[i][j];
             }
         }
-        for(int i=0; i<n; i++){
+        
+        for(int i=0; i<n;i++){
             for(int j=n-1; j>=i; j--){
-                uppsum += matrix[i][j];
+                upSum += matrix[i][j];
             }
         }
+         ans.push_back(upSum);
+         ans.push_back(lowsum);
         
-        ans.push_back(uppsum);
-        ans.push_back(lowsum);
-        
-        return ans;
+         return ans;
+         
     }
 };
 
+
+
+
+// class Solution
+// {   
+//     public:
+//     //Function to return sum of upper and lower triangles of a matrix.
+//     vector<int> sumTriangles(const vector<vector<int> >& matrix, int n)
+//     {
+//         int lowsum = 0;
+//         int uppsum = 0;
+//         vector<int>ans;
+//         for(int i=0; i<n; i++){
+//             for(int j=0; j<=i; j++){
+//                 lowsum += matrix[i][j];
+//             }
+//         }
+//         for(int i=0; i<n; i++){
+//             for(int j=n-1; j>=i; j--){
+//                 uppsum += matrix[i][j];
+//             }
+//         }
+        
+//         ans.push_back(uppsum);
+//         ans.push_back(lowsum);
+        
+//         return ans;
+//     }
+// };
 
 //{ Driver Code Starts.
 
